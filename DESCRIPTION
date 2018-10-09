@@ -1,0 +1,28 @@
+Package: dirtybirds
+Type: Package
+Title: Quick and Dirty Scan of Images for Interesting Bird-like Targets
+Version: 0.1.0
+Author: Eric C. Anderson
+Maintainer: TEric C. Anderson <eric.anderson@noaa.gov>
+Description: The main function reads in a CR2 image, aggregates it,
+    does a PCA on it, and then finds all the cells that are a certain
+    Mahalanobis distance away from the average.  It then centers squares
+    around those spots and prints them as PDF files into a directory. It
+    also keeps around information about where in which images those were
+    so that the CR2 images can be extracted using ImageMagick (for example)
+    later, for training.
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.3.0)
+Imports:
+    dplyr,
+    igraph,
+    ggplot2,
+    magrittr,
+    raster,
+    RStoolbox,
+    stringr,
+    tibble
+RoxygenNote: 6.1.0
