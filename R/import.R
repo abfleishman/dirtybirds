@@ -12,3 +12,8 @@
 NULL
 
 
+
+# these are because of bring rasterPCA in internally
+#' @importFrom raster calc cellStats layerStats mask ncell nlayers sampleRandom
+#' @importFrom stats princomp
+NULL

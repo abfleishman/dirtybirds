@@ -21,7 +21,7 @@ find_and_crop_targets <- function(img, keep1 = 200, keep2 = 100, outdir = ".", c
 
   xagg <- raster::aggregate(x, fact = 16)
 
-  xapca <- RStoolbox::rasterPCA(xagg)
+  xapca <- rasterPCA(xagg)
 
   pc1 <- xapca$map[[1]][]
   pc2 <- xapca$map[[2]][]

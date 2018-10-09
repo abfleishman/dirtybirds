@@ -3,7 +3,7 @@ Type: Package
 Title: Quick and Dirty Scan of Images for Interesting Bird-like Targets
 Version: 0.1.0
 Author: Eric C. Anderson
-Maintainer: TEric C. Anderson <eric.anderson@noaa.gov>
+Maintainer: Eric C. Anderson <eric.anderson@noaa.gov>
 Description: The main function reads in a CR2 image, aggregates it,
     does a PCA on it, and then finds all the cells that are a certain
     Mahalanobis distance away from the average.  It then centers squares
@@ -22,7 +22,6 @@ Imports:
     ggplot2,
     magrittr,
     raster,
-    RStoolbox,
     stringr,
     tibble
 RoxygenNote: 6.1.0
