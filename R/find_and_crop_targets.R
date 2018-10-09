@@ -63,7 +63,7 @@ find_and_crop_targets <- function(img, keep1 = 200, keep2 = 100, outdir = ".", c
   rc <- raster::clump(tmp)
   clump_id <- raster::getValues(rc)
   xy <- raster::xyFromCell(rc,1:raster::ncell(rc))
-  DF <- data.frame(xy, clump_id, is_clump = rc[] %in% freq(rc, useNA = 'no')[,1]) %>%
+  DF <- data.frame(xy, clump_id, is_clump = rc[] %in% raster::freq(rc, useNA = 'no')[,1]) %>%
     tibble::as_tibble() %>%
     dplyr::mutate(mh_dist = df$m_dist)
 

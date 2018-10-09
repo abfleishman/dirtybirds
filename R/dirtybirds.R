@@ -4,7 +4,6 @@ if(getRversion() >= "2.15.1")  {
   utils::globalVariables(
     c(
       ".",
-      "freq",
       "index",
       "is_clump",
       "keep",
