@@ -160,13 +160,15 @@ find_and_crop_targets <- function(img, keep1 = 200, keep2 = 100, outdir = ".", c
   # of the files.
   dump <- lapply(seq_along(interesting_squares), function(i) {
     s <- interesting_squares[[i]]
-    grDevices::pdf(file = file.path(write_dir, paste0("tile_", name, "_",
+    grDevices::tiff(file = file.path(write_dir, paste0("tile_", name, "_",
                                            sprintf("%03d", i), "-",
                                            raster::xmin(s), "-",
                                            raster::xmax(s), "-",
                                            raster::ymin(s), "-",
                                            raster::ymax(s),
-                                           ".pdf")))
+                                           ".tif")),
+                    width = crop_pixels,
+                    height = crop_pixels)
     raster::plotRGB(s)
     grDevices::dev.off()
 
