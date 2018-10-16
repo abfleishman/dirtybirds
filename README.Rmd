@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 
 
-This is an R package for performing taking high resolution images (in raw, CR2 format)
+This is an R package for taking high resolution images (in raw, CR2 format)
 and then identifying squares that are outside of the norm.  These are cropped out and placed
 in a folder so people can classify them into categories of training data.
 
@@ -36,7 +36,10 @@ devtools::install_github("eriqande/dirtybirds")
 ## Processing a single image
 
 This is done within R, simply loading the package and then calling
-a single function.  Here we show that using the default settings:
+a single function.  Here we show that using the default settings. Note that it takes
+about 2 to 4 minutes to process each image.  My thought is that we throw it all onto
+a cluster and farm short jobs out to thousands of nodes so that we can do thousands of images
+per hour
 ```{r, eval=FALSE}
 library(dirtybirds)
 
@@ -70,8 +73,8 @@ interesting looking targets (basically it is the number (with leading zeroes) th
 in the upper right corner of each image on the proofsheet).  And then xmin, xmax, ymin,
 ymax are the pixel positions of the square defining the image.  I had originally
 thought I would use these positions to extract the 
-squares from the CR2 files using ImageMagick (see below), after they
-have all been sorted into different target categories.  However, I just looked into
+squares from the CR2 files using ImageMagick, after they
+had all been sorted into different target categories.  However, I just looked into
 that and ImageMagick can't write in CR2 format. I don't know how to extract just a
 small area from a CR2 file and save that as a CR2 file.  So, I decided to just write
 the images out as TIFFs, and I suspect those should be fine as input to the 
