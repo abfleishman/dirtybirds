@@ -1,9 +1,10 @@
 Package: dirtybirds
 Type: Package
 Title: Quick and Dirty Scan of Images for Interesting Bird-like Targets
-Version: 0.1.0
+Version: 0.1.1
 Author: Eric C. Anderson
 Maintainer: Eric C. Anderson <eric.anderson@noaa.gov>
+Contributer: Abram B. Fleishman <abram@@conservationmetrics.com>
 Description: The main function reads in a CR2 image, aggregates it,
     does a PCA on it, and then finds all the cells that are a certain
     Mahalanobis distance away from the average.  It then centers squares
@@ -23,5 +24,7 @@ Imports:
     magrittr,
     raster,
     stringr,
-    tibble
+    tibble,
+    tidyr,
+    purrr
 RoxygenNote: 6.1.0
