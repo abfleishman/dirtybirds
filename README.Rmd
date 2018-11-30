@@ -29,7 +29,7 @@ in a folder so people can classify them into categories of training data.
 
 Do it from GitHub:
 ```{r, eval=FALSE}
-devtools::install_github("eriqande/dirtybirds")
+devtools::install_github("abfleishman/dirtybirds")
 ```
 
 
